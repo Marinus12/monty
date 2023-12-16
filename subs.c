@@ -13,14 +13,14 @@ void t_sub(stack_t **head, unsigned int numb)
         int ren, bit;
 
         count = *head;
-        for (bit = 0; count != NULL, bit++)
+        for (bit = 0; count != NULL; bit++)
                 count = count->next;
         if (bit < 2)
         {
                 fprintf(stderr, "L%d: can't sub, stack too short\n", numb);
                 fclose(bus.file);
                 free(bus.content);
-                free_stack(*head);
+                stack_free(*head);
                 exit(EXIT_FAILURE);
         }
         count = *head;

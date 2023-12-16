@@ -1,5 +1,6 @@
 #include "monty.h"
 
+bus_t bus = {NULL, NULL, NULL, 0};
 /**
   * main - monty code intrpreter
   * @argc: number of arguments
@@ -40,7 +41,7 @@ int main(int argc, char *argv[])
                         executes(content, &hstack, numb, file);
                 free(content);
         }
-        free_stack(hstack);
+        stack_free(hstack);
         fclose(file);
         return (0);
 }

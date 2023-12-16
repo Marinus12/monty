@@ -16,7 +16,7 @@ void t_pop(stack_t **head, unsigned int numb)
                 fprintf(stderr, "L%d: can't pop an empty stack\n", numb);
                 fclose(bus.file);
                 free(bus.content);
-                free_stack(*head);
+                stack_free(*head);
                 exit(EXIT_FAILURE);
         }
         k = *head;

@@ -23,11 +23,11 @@ void t_swap(stack_t **head, unsigned int numb)
                 fprintf(stderr, "L%d: can't swap stack too short\n", numb);
                 fclose(bus.file);
                 free(bus.content);
-                free_stack(*head);
+                stack_free(*head);
                 exit(EXIT_FAILURE);
         }
         k = *head;
         count = k->n;
-        k->n = k->next;
+        k->n = k->next->n;
         k->next->n = count;
 }

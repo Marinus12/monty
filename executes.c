@@ -20,7 +20,7 @@ int executes(char *content, stack_t **hstack, unsigned int numb, FILE *file)
                 {"div", t_div},
                 {"mul", t_mul},
                 {"mod", t_mod},
-                {"pchar", t_ptchar},
+                {"pchar", t_char},
                 {"pstr", t_ptstr},
                 {"rotl", t_rotl},
                 {"rotr", t_rotr},
@@ -49,7 +49,7 @@ int executes(char *content, stack_t **hstack, unsigned int numb, FILE *file)
                 fprintf (stderr, "L%d: unknown instruction %s\n", numb, ops);
                 fclose(file);
                 free(content);
-                free_stack(*hstack);
+                stack_free(*hstack);
                 exit(EXIT_FAILURE);
         }
         return (1);

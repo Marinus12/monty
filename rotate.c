@@ -7,7 +7,7 @@
   *
   * Return: no return
   */
-void t_rotr(stack **head, __attribute__((unused)) unsigned int numb)
+void t_rotr(stack_t **head, __attribute__((unused)) unsigned int numb)
 {
         stack_t *ren;
 

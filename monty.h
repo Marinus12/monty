@@ -35,6 +35,24 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/**
+  * struct bus_s - variables -args, file and line content
+  * @arg: val
+  * @file: pointer to monty file
+  * @content: line content
+  * @lifi: flag change stack
+  *
+  * Description: carries values thru the program
+  */
+typedef struct bus_s
+{
+        char *arg;
+        FILE *file;
+        char *content;
+        int lifi;
+} bus_t;
+extern bus_t bus;
+
 void t_div(stack_t **head, unsigned int numb);
 void t_mod(stack_t **head, unsigned int numb);
 void t_pall(stack_t **head, unsigned int numb);
@@ -43,17 +61,19 @@ void t_rotr(stack_t **head, __attribute__((unused)) unsigned int numb);
 void t_adds(stack_t **head, unsigned int numb);
 void t_push(stack_t **head, unsigned int numb);
 void t_stack(stack_t **head, unsigned int numb);
-void add_node(stack_t **head, int k);
-void(stack_t *head);
+void add_node(stack_t **head, int n);
+void t_pop(stack_t **head, unsigned int numb);
 void t_mul(stack_t **head, unsigned int numb);
 void t_pint(stack_t **head, unsigned int numb);
 void t_queue(stack_t **head, unsigned int numb);
-void add_queue(stack_t **head, int k);
+void add_queue(stack_t **head, int n);
 void t_sub(stack_t **head, unsigned int numb);
 void t_nop(stack_t **head, unsigned int numb);
 int main(int argc, char *argv[]);
 void t_swap(stack_t **head, unsigned int numb);
 void stack_free(stack_t *head);
+void t_char(stack_t **head, unsigned int numb);
+
 void t_rotl(stack_t **head, __attribute__((unused)) unsigned int numb);
-int executes(char *content, stack_t hstack, unsigned int numb, FILE *file);
+int executes(char *content, stack_t **hstack, unsigned int numb, FILE *file);
 #endif

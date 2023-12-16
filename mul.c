@@ -13,7 +13,7 @@ void t_mul(stack_t **head, unsigned int numb)
         int len = 0, count;
 
         k = *head;
-        while (h)
+        while (k)
         {
                 k = k->next;
                 len++;
@@ -23,7 +23,7 @@ void t_mul(stack_t **head, unsigned int numb)
                 fprintf(stderr, "L%d: can't multiply, stack too short\n", numb);
                 fclose(bus.file);
                 free(bus.content);
-                free_stack(*head);
+                stack_free(*head);
                 exit(EXIT_FAILURE);
         }
         k = *head;

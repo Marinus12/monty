@@ -17,21 +17,21 @@ void t_queue(stack_t **head, unsigned int numb)
 /**
   * add_queue - add node to the tail xtack
   * @head: stack head
-  * @k: integer
+  * @n: integer
   *
   * Return: no return
   */
-void add_queue(stack_t **head, int k)
+void add_queue(stack_t **head, int n)
 {
         stack_t *new, *count;
 
         count = *head;
         new = malloc(sizeof(stack_t));
-        if (new)
+        if (new == NULL)
         {
                 printf("Error\n");
         }
-        new->k = k;
+        new->n = n;
         new->next = NULL;
         if (count)
         {

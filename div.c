@@ -19,10 +19,10 @@ void t_div(stack_t **head, unsigned int numb)
         }
         if (len < 2)
         {
-                fprintf(stder, "L%d: can't div, stack very short\n", numb);
+                fprintf(stderr, "L%d: can't div, stack very short\n", numb);
                 fclose(bus.file);
                 free(bus.content);
-                free_stack(*head);
+                stack_free(*head);
                 exit(EXIT_FAILURE);
         }
         h = *head;
@@ -31,10 +31,10 @@ void t_div(stack_t **head, unsigned int numb)
                 fprintf(stderr, "L%d: division by zero\n", numb);
                 fclose(bus.file);
                 free(bus.content);
-                free_stack(*head);
+                stack_free(*head);
                 exit(EXIT_FAILURE);
         }
-        count = h->next->n / n->n;
+        count = h->next->n / h->n;
         h->next->n = count;
         *head = h->next;
         free(h);

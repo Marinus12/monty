@@ -23,7 +23,7 @@ void t_mod(stack_t **head, unsigned int numb)
                 fprintf(stderr, "L%d: cant't mod, stack too short\n", numb);
                 fclose(bus.file);
                 free(bus.content);
-                free_stack(*head);
+                stack_free(*head);
                 exit(EXIT_FAILURE);
         }
         h = *head;
@@ -32,8 +32,8 @@ void t_mod(stack_t **head, unsigned int numb)
                  fprintf(stderr, "L%d: division by zero\n", numb);
                  fclose(bus.file);
                  free(bus.content);
-                 free_stack(*head);
-                 exit(RXIT_FAILURE);
+                 stack_free(*head);
+                 exit(EXIT_FAILURE);
         }
         count = h->next->n % h->n;
         h->next->n = count;
